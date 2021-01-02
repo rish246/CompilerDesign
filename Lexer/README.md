@@ -1,6 +1,6 @@
-#Lexer Implementation for our Programming Language
+# Lexer Implementation for our Programming Language
 
-###Download necessary libraries
+### Download necessary libraries
 `sudo apt-get install flex bison`
 
 **To run the files in the project, Follow the following commands:**
