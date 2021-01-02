@@ -1,0 +1,10 @@
+*.o
+*.d
+*.pdf
+*.out
+.vscode/
+
+*.s
+.gitigore
+
+*.(zsh|bash|sh)
