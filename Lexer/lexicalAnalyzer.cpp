@@ -74,7 +74,7 @@ int main()
 
         else if (newToken == STR_CONST)
         {
-            // cout << "found the string :" << yylval.STR_CONST_VAL << endl;
+            cout << "found the string :" << yylval.STR_CONST_VAL << endl;
         }
 
         else if (newToken == ERROR)
@@ -95,11 +95,11 @@ int main()
         }
         else if (newToken == LE)
         {
-            cout << yytext << endl;
+            // cout << yytext << endl;
         }
         else
         {
-            cout << (char)newToken << endl;
+            // cout << (char)newToken << endl;
         }
 
         newToken = yylex();

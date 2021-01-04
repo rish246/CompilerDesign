@@ -38,6 +38,7 @@
 #define LE 282
 #define ERROR 283
 #define LET_STMT 285
+#define GE 286
 
 #ifndef YYSTYPE
 typedef union YYSTYPE

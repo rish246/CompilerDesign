@@ -29,6 +29,12 @@
     */
     int commentDepth = 0;
 
+    void dumpBuffers()
+    {
+        literal = nullptr;
+        temp = nullptr;
+    }
+
 
 %}
 
@@ -80,6 +86,8 @@ OPEN_BRACKET	 "{"
 CLOSE_BRACKET	 "}"
 LESS_THAN		          "<"
 LESS_THAN_EQ    		 <=
+GREATER_THAN            ">"
+GREATER_THAN_EQ         ">="
 DOT		 "."
 TILDA		 "~"
 AT		 "@"
@@ -95,7 +103,7 @@ ESC_NL		 \\n
 ESC_NEWLINE	 \\\n
 
 /* WHITESPACE */
-WHITESPACE	[ \f\t\v\r\n]
+WHITESPACE	[ \f\t\v\r]
 NEWLINE		\n
 
 IDENTIFIER [a-zA-Z][a-zA-Z0-9_]+
@@ -147,6 +155,9 @@ STRING_START  \"
 <SINGLE_LINE_COMMENT>.              ;
 
 <INITIAL>{NEWLINE}         { currentLineNumber++; }
+<INITIAL>{WHITESPACE}+      ;
+
+
 class             return CLASS;
 else              return ELSE;
 fi                return FI;
@@ -181,6 +192,8 @@ not             return NOT;
 {LESS_THAN_EQ}   return LE;
 {DOT}		     return '.';
 {TILDA}		     return '~';
+{GREATER_THAN}   return '>';
+{GREATER_THAN_EQ}   return GE;
 {AT}		        return '@';
 
 
@@ -231,9 +244,8 @@ false               {
                             
 <STRING_LITERAL>\"          { 
                                 
-                                yylval.STR_CONST_VAL = literal;
-                                temp = nullptr;
-                                literal = nullptr;                                
+                                yylval.STR_CONST_VAL = literal;             
+                                dumpBuffers();                 
                                 BEGIN(INITIAL);
 
                                 return STR_CONST;
@@ -242,9 +254,7 @@ false               {
 
 <STRING_LITERAL>{NEWLINE}   {
                                 throw_UnexpectedEndOfStrError(currentLineNumber);
-
-                                literal = nullptr;
-                                temp = nullptr;
+                                dumpBuffers();
                                 return ERROR;
     
                                 
@@ -252,9 +262,7 @@ false               {
 
 <STRING_LITERAL><<EOF>>     {
                                 throw_Unexpected_EOF(currentLineNumber);
-
-                                temp = nullptr;
-                                literal = nullptr;
+                                dumpBuffers();
                                 BEGIN(INITIAL);
                                 return ERROR;
                             }
@@ -263,9 +271,7 @@ false               {
                                 stringLength = int(temp - literal);
                                 if(stringLength >= MAX_SIZE) {
                                     throw_StrConstTooLargeError(currentLineNumber);
-
-                                    literal = nullptr;
-                                    temp = nullptr;
+                                    dumpBuffers();
                                     BEGIN(INITIAL);
                                     return ERROR;
 
@@ -280,7 +286,7 @@ false               {
 
 {IDENTIFIER}        return OBJECTID;
 
-.                 ;
+.                 printf("%s : %d\n",yytext, currentLineNumber);
 %%
 /*
     COMMENTS

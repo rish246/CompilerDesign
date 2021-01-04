@@ -1,6 +1,9 @@
 (* models one-dimensional cellular automaton on a circle of finite radius
    arrays are faked as Strings,
    X's respresent live cells, dots represent dead cells,
+   (*
+        Another Comment Is This
+   *)
    no error checking is done *)
 class CellularAutomaton inherits IO {
     population_map : String;
@@ -90,7 +93,7 @@ class Main {
                         countdown <- countdown - 1;
                     
                 pool
-            );  (* end let countdown
+            );  (* end let countdown *)
             self;
         }
     };
