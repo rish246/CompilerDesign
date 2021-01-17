@@ -1,12 +1,12 @@
-/*
-    Author: Rishabh Katna
-    Date: 1st Jan 2021
+#include "../include/lexicalAnalyzer.h"
+#include "../include/Error_Types.h"
+#include "../include/Error.h"
+#include "../include/Error_Types.h"
 
-    This file contains some helpers related to Error handling in our lexer
-*/
-#include "../lexicalAnalyzer.h"
-#include "./Error_Types.h"
-#include "./Error.h"
+#include <string.h>
+
+extern char *yytext;
+
 void throw_StrConstTooLargeError(int lineNo)
 {
     int Error_Type = STRING_CONSTANT_TOO_LONG;
@@ -40,8 +40,14 @@ void throw_Unexpected_EOF(int lineNo)
 void throw_InvalidParam(int lineNo)
 {
     int Error_Type = INVALID_PARAMETER;
-    const char *message = "Invalid Parameter";
+    char message[] = "Invalid Parameter";
+    // Concat YYTEXT in the message will be pretty Great
 
-    Error *newError = new Error(Error_Type, (char *)message, lineNo);
+    int lenFinalMessage = strlen(message) + strlen(yytext) + 4;
+    char *finalMessage = new char[lenFinalMessage];
+
+    snprintf(finalMessage, (sizeof(char) * lenFinalMessage), "%s : %s", message, yytext);
+
+    Error *newError = new Error(Error_Type, finalMessage, lineNo);
     yylval.error = newError;
 }

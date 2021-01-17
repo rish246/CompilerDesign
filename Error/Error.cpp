@@ -1,4 +1,4 @@
-#include "Error.h"
+#include "../include/Error.h"
 #include <iostream>
 
 using namespace std;

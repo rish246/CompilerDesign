@@ -1,6 +1,20 @@
 #ifndef LEXICAL_ANALYZER_H
 #define LEXICAL_ANALYZER_H
-#include "./Error/Error.h"
+#include "Error.h"
+#include "SymTab.hpp"
+
+// Define Symbols
+// Symbol can Take Entries Like:->
+//      INT_CONST
+//      STR_CONST
+//      OBJECT_ID
+//      TYPEID
+
+// Each Symbol Maintains following Features:
+// char* value
+// int lengthOfSymbol
+// int index --> unique Index to each string
+// typedef Entry *Symbol;
 
 #define CLASS 258
 #define ELSE 259
@@ -43,9 +57,8 @@
 #ifndef YYSTYPE
 typedef union YYSTYPE
 {
-    int INT_CONST_VAL;
     bool BOOL_CONST_VAL;
-    char *STR_CONST_VAL;
+    Entry *symbol;
     Error *error;
 } YYSTYPE;
 

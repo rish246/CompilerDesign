@@ -1,9 +1,10 @@
 %{
-    #include "lexicalAnalyzer.h"
+    #include "../include/lexicalAnalyzer.h"
     #include <string.h>
-    #include "./Error/Error.h"
-    #include "./Error/Error_Types.h"
-    #include "./Error/Error_helpers.h"
+    #include "../include/Error.h"
+    #include "../include/Error_Types.h"
+    #include "../include/Error_helpers.h"
+    #include "../include/SymTab.hpp"
     // #include "Error_Types.h"
     
     extern YYSTYPE yylval;
@@ -36,6 +37,14 @@
     }
 
 
+    // Each ID has unique countValue
+    // INT/STR/ID
+    int entryId = 0;
+
+
+
+
+
 %}
 
 
@@ -62,7 +71,7 @@ OBJECTID	        [a-z]([A-Za-z_0-9])*
 
 
 /* Define Types and TypeIDs */
-TYPES               "Int"|"Bool"|"String"|"Object"|"SELF_TYPE"|"self"
+TYPES               [A-Z]([A-Z0-9_a-z])*
 
 
 
@@ -113,6 +122,7 @@ IDENTIFIER [a-zA-Z][a-zA-Z0-9_]+
 /* Error Handling   */
 /* 1 --> String */ 
 /* Error .. String Constant Too Large */
+/* I am not able to Write StringEntry or IntEntry */
 STRING_START  \"
 
 
@@ -201,6 +211,8 @@ not             return NOT;
 
 
 {TYPES}             {
+                        Entry* sym = new IdEntry(yytext, MAX_SIZE, entryId++);
+                        yylval.symbol = sym;
                         return TYPEID;
                     }
 
@@ -216,7 +228,11 @@ false               {
 
 
 {INTEGER}           {
-                        yylval.INT_CONST_VAL = atoi(yytext);
+                        Entry* sym = new IntEntry(yytext, MAX_SIZE, entryId++);
+                        yylval.symbol = sym;
+
+                        printf("Int Occured : %s at Line Number : %d\n", yylval.symbol->getValue(), currentLineNumber);
+
                         return INT_CONST;
                     }
 
@@ -244,7 +260,10 @@ false               {
                             
 <STRING_LITERAL>\"          { 
                                 
-                                yylval.STR_CONST_VAL = literal;             
+                                Entry* sym = new StringEntry(literal, strlen(literal), entryId++);
+
+                                yylval.symbol = sym;
+
                                 dumpBuffers();                 
                                 BEGIN(INITIAL);
 
@@ -284,9 +303,18 @@ false               {
 
 
 
-{IDENTIFIER}        return OBJECTID;
+{IDENTIFIER}        {
+                        Entry* sym = new IdEntry(yytext, MAX_SIZE, entryId++);
 
-.                 printf("%s : %d\n",yytext, currentLineNumber);
+                        yylval.symbol = sym;
+                        return OBJECTID;
+                    }
+
+.                   {
+                        printf("Unexpected Token Recieved, %s\n", yytext);
+                        throw_InvalidParam(currentLineNumber);
+                        return ERROR;
+                    }
 %%
 /*
     COMMENTS
@@ -297,3 +325,6 @@ int yywrap(void)
     return 1;
 }
 
+// Construct a symbol Table
+// Return the Unexpected Character Error
+// Start working on the Parser
