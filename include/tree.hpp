@@ -33,7 +33,7 @@ public:
 */
 class tree_node
 {
-private:
+protected:
     /* data */
     int line_number; // For generating Parse Errors
 public:
