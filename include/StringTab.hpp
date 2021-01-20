@@ -1,5 +1,5 @@
-#ifndef SYMTAB_H
-#define SYMTAB_H
+#ifndef STRING_TAB_H
+#define STRING_TAB_H
 
 #include <unordered_map>
 #include <string.h>
@@ -73,7 +73,7 @@ public:
 //////////////////////////////////////////////////////////////////////////////
 
 template <class Elem>
-class SymbolTable
+class Table
 {
     // Make the Table and Index protected
     // They will Be used by the IdTable, IntTable and StringTable
@@ -86,13 +86,16 @@ protected:
 public:
     // Default constructor
     // Set uniqueId = 0 and Table is nullptr
-    SymbolTable()
+    Table()
         : uniqueId(0)
     {
         printf("Default constructor is called\n");
     }
 
     Elem *addEntry(char *name);
+
+    // Add one more Feature... To Lookup by ID
+    Elem *lookUpById(int id);
 
     Elem *lookUp(char *name);
 };
@@ -102,7 +105,7 @@ public:
 */
 
 template <class Elem>
-Elem *SymbolTable<Elem>::addEntry(char *name)
+Elem *Table<Elem>::addEntry(char *name)
 {
     // Lookup Entry
     // If Entry Found, Return Entry
@@ -124,21 +127,34 @@ Elem *SymbolTable<Elem>::addEntry(char *name)
 }
 
 template <class Elem>
-Elem *SymbolTable<Elem>::lookUp(char *name)
+Elem *Table<Elem>::lookUp(char *name)
 {
     // return table[name];
     return table[name];
 }
 
-class StringTable : public SymbolTable<StringEntry>
+template <class Elem>
+Elem *Table<Elem>::lookUpById(int id)
+{
+    for (auto entry : table)
+    {
+        Elem *valueElem = entry.second;
+        if (valueElem->uniqueId == id)
+            return valueElem;
+
+        return nullptr;
+    }
+}
+
+class StringTable : public Table<StringEntry>
 {
 };
 
-class IntTable : public SymbolTable<StringEntry>
+class IntTable : public Table<StringEntry>
 {
 };
 
-class IdTable : public SymbolTable<StringEntry>
+class IdTable : public Table<StringEntry>
 {
 };
 

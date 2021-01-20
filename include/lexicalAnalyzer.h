@@ -1,7 +1,7 @@
 #ifndef LEXICAL_ANALYZER_H
 #define LEXICAL_ANALYZER_H
 #include "Error.h"
-#include "SymTab.hpp"
+#include "StringTab.hpp"
 
 // Define Symbols
 // Symbol can Take Entries Like:->
@@ -14,7 +14,7 @@
 // char* value
 // int lengthOfSymbol
 // int index --> unique Index to each string
-// typedef Entry *Symbol;
+typedef Entry *Symbol;
 
 #define CLASS 258
 #define ELSE 259
@@ -58,7 +58,7 @@
 typedef union YYSTYPE
 {
     bool BOOL_CONST_VAL;
-    Entry *symbol;
+    Symbol symbol;
     Error *error;
 } YYSTYPE;
 
