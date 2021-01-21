@@ -1,10 +1,10 @@
 %{
-    #include "../include/lexicalAnalyzer.h"
+    #include "../../include/lexicalAnalyzer.h"
     #include <string.h>
-    #include "../include/Error.h"
-    #include "../include/Error_Types.h"
-    #include "../include/Error_helpers.h"
-    #include "../include/SymTab.hpp"
+    #include "../../include/Error.h"
+    #include "../../include/Error_Types.h"
+    #include "../../include/Error_helpers.h"
+    #include "../../include/StringTab.hpp"
     // #include "Error_Types.h"
     
     extern YYSTYPE yylval;

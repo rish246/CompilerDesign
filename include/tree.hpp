@@ -141,10 +141,10 @@ template <class Elem>
 class nil_node : public list_node<Elem>
 {
 public:
-    list_node<Elem> *copy_list();
-    int len();
-    Elem nth_length(int n, int &len);
-    void dump(ostream &stream, int n);
+    list_node<Elem> *copy_list() override;
+    int len() override;
+    Elem nth_length(int n, int &len) override;
+    void dump(ostream &stream, int n) override;
 };
 
 template <class Elem>
@@ -157,10 +157,10 @@ public:
     {
         elem = t;
     }
-    list_node<Elem> *copy_list();
-    int len();
-    Elem nth_length(int n, int &len);
-    void dump(ostream &stream, int n);
+    list_node<Elem> *copy_list() override;
+    int len() override;
+    Elem nth_length(int n, int &len) override;
+    void dump(ostream &stream, int n) override;
 };
 
 /*
@@ -191,11 +191,11 @@ public:
         some = l1;
         rest = l2;
     }
-    list_node<Elem> *copy_list();
-    int len();
+    list_node<Elem> *copy_list() override;
+    int len() override;
     Elem nth(int n);
-    Elem nth_length(int n, int &len);
-    void dump(ostream &stream, int n);
+    Elem nth_length(int n, int &len) override;
+    void dump(ostream &stream, int n) override;
 };
 
 // Return a singl_list_node<Elem> ptr

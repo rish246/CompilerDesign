@@ -1,4 +1,4 @@
-#include "../include/StringTab.hpp"
+#include "../../include/StringTab.hpp"
 #include <string.h>
 
 Entry::Entry(char *v, int l, int i)

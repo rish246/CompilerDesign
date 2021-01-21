@@ -1,5 +1,5 @@
-#include "../include/lexicalAnalyzer.h"
-#include "../include/Error_Types.h"
+#include "../../include/lexicalAnalyzer.h"
+#include "../../include/Error_Types.h"
 #include <iostream>
 #include <string>
 #include <unordered_map>
