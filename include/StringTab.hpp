@@ -1,30 +1,51 @@
 #ifndef STRING_TAB_H
 #define STRING_TAB_H
 
+<<<<<<< HEAD
 #include <iostream>
 #include <unordered_map>
 #include <string>
+=======
+#include <unordered_map>
+#include <string.h>
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 // Define our Entry class
 class Entry
 {
 protected:
+<<<<<<< HEAD
     std::string m_value;
     size_t m_length;
     int m_id;
+=======
+    char *value;
+    int length;
+    int id;
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
 public:
     Entry() {}
 
+<<<<<<< HEAD
     Entry(const std::string &, size_t l, int _id);
 
     std::string getValue();
+=======
+    Entry(char *v, int l, int _id);
+
+    char *getValue();
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 };
 
 // Define StringEntry
 class StringEntry : public Entry
 {
 public:
+<<<<<<< HEAD
     StringEntry(const std::string &v, size_t l, int _id)
+=======
+    StringEntry(char *v, int l, int _id)
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
         : Entry(v, l, _id)
     {
     }
@@ -33,7 +54,11 @@ public:
 class IntEntry : public Entry
 {
 public:
+<<<<<<< HEAD
     IntEntry(const std::string &v, size_t l, int _id)
+=======
+    IntEntry(char *v, int l, int _id)
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
         : Entry(v, l, _id)
     {
     }
@@ -42,7 +67,11 @@ public:
 class IdEntry : public Entry
 {
 public:
+<<<<<<< HEAD
     IdEntry(const std::string &v, size_t l, int _id)
+=======
+    IdEntry(char *v, int l, int _id)
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
         : Entry(v, l, _id)
     {
     }
@@ -78,9 +107,15 @@ class Table
 {
     // Make the Table and Index protected
     // They will Be used by the IdTable, IntTable and StringTable
+<<<<<<< HEAD
 public:
     // Table: Map from lexeme -> Entry
     std::unordered_map<std::string, Elem *> table; // Ptr to Table is stored
+=======
+protected:
+    // Table: Map from lexeme -> Entry
+    std::unordered_map<char *, Elem *> table; // Ptr to Table is stored
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
     int uniqueId;
 
@@ -90,14 +125,25 @@ public:
     Table()
         : uniqueId(0)
     {
+<<<<<<< HEAD
     }
 
     Elem *addEntry(const std::string &name);
+=======
+        printf("Default constructor is called\n");
+    }
+
+    Elem *addEntry(char *name);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
     // Add one more Feature... To Lookup by ID
     Elem *lookUpById(int id);
 
+<<<<<<< HEAD
     Elem *lookUp(const std::string &name);
+=======
+    Elem *lookUp(char *name);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 };
 
 /*
@@ -105,6 +151,7 @@ public:
 */
 
 template <class Elem>
+<<<<<<< HEAD
 Elem *Table<Elem>::addEntry(const std::string &name)
 {
 
@@ -117,6 +164,18 @@ Elem *Table<Elem>::addEntry(const std::string &name)
     }
 
     size_t lenEntry = name.size();
+=======
+Elem *Table<Elem>::addEntry(char *name)
+{
+    // Lookup Entry
+    // If Entry Found, Return Entry
+    // Else create a new
+    Elem *existingEntry = lookUp(name);
+    if (existingEntry != nullptr)
+        return existingEntry;
+
+    int lenEntry = strlen(name);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
     // Create a new Entry
     Elem *newEntry = new Elem(name, lenEntry, uniqueId++);
 
@@ -129,11 +188,17 @@ Elem *Table<Elem>::addEntry(const std::string &name)
 }
 
 template <class Elem>
+<<<<<<< HEAD
 Elem *Table<Elem>::lookUp(const std::string &name)
 {
     // return table[name];
     if (table[name])
         std::cout << "Entry " << table[name] << " found in string table" << std::endl;
+=======
+Elem *Table<Elem>::lookUp(char *name)
+{
+    // return table[name];
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
     return table[name];
 }
 
@@ -154,11 +219,19 @@ class StringTable : public Table<StringEntry>
 {
 };
 
+<<<<<<< HEAD
 class IntTable : public Table<IntEntry>
 {
 };
 
 class IdTable : public Table<IdEntry>
+=======
+class IntTable : public Table<StringEntry>
+{
+};
+
+class IdTable : public Table<StringEntry>
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 {
 };
 

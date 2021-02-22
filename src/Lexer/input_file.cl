@@ -30,8 +30,13 @@ class CellularAutomaton inherits IO {
         population_map.substr(position, 1)
     };
    
+<<<<<<< HEAD
     cell_left_neighbor(position : Int) : String {{GREATER_THAN_EQ}   return GE;
 
+=======
+    cell_left_neighbor(position : Int) : String {
+        if position = 0 then
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
             cell(num_cells() - 1)
         else
             cell(position - 1)
@@ -56,13 +61,21 @@ class CellularAutomaton inherits IO {
         then
             "X"
         else
+<<<<<<< HEAD
             "."
+=======
+            '.'
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
         fi
     };
    
     evolve() : SELF_TYPE {
         (let position : Int in
+<<<<<<< HEAD
         (let num : Int <- num_cells in
+=======
+        (let num : Int <- num_cells[] in
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
         (let temp : String in
             {
                 while position < num loop

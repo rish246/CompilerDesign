@@ -9,7 +9,11 @@
 //////////////////////////////////////////////////////////
 // Read this file fully ... We will be able to understand various classes and phylumns used in this assignment
 
+<<<<<<< HEAD
 #include "./tree.h"
+=======
+#include "./tree.hpp"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 // studied this --> done
 #include "cool-tree.handcode.h" // Study this
 
@@ -201,7 +205,11 @@ public:
 // define constructor - attr
 class attr_class : public Feature_class
 {
+<<<<<<< HEAD
 public:
+=======
+protected:
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
    Symbol name;
    Symbol type_decl;
    Expression init;
@@ -869,7 +877,11 @@ Expression loop(Expression, Expression);
 Expression typcase(Expression, Cases);
 Expression block(Expressions);
 Expression let(Symbol, Symbol, Expression, Expression);
+<<<<<<< HEAD
 Expression plus_(Expression, Expression);
+=======
+Expression plus(Expression, Expression);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 Expression sub(Expression, Expression);
 Expression mul(Expression, Expression);
 Expression divide(Expression, Expression);

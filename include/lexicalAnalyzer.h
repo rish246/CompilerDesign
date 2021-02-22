@@ -1,5 +1,9 @@
 #ifndef LEXICAL_ANALYZER_H
 #define LEXICAL_ANALYZER_H
+<<<<<<< HEAD
+=======
+#include "Error.h"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 #include "StringTab.hpp"
 
 // Define Symbols
@@ -14,7 +18,10 @@
 // int lengthOfSymbol
 // int index --> unique Index to each string
 typedef Entry *Symbol;
+<<<<<<< HEAD
 typedef int Boolean;
+=======
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
 #define CLASS 258
 #define ELSE 259
@@ -57,9 +64,15 @@ typedef int Boolean;
 #ifndef YYSTYPE
 typedef union YYSTYPE
 {
+<<<<<<< HEAD
     Boolean boolean;
     Symbol symbol;
     char *error_msg;
+=======
+    bool BOOL_CONST_VAL;
+    Symbol symbol;
+    Error *error;
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 } YYSTYPE;
 
 // define yylval

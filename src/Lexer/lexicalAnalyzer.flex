@@ -1,9 +1,17 @@
 %{
+<<<<<<< HEAD
     #include <string>
     // #include "../../include/cool_parser.hpp"
     #include "../../include/cool_parser.hpp"
     #include "../../include/cool-tree.h"
     #include "../../include/cool.h"
+=======
+    #include "../../include/lexicalAnalyzer.h"
+    #include <string.h>
+    #include "../../include/Error.h"
+    #include "../../include/Error_Types.h"
+    #include "../../include/Error_helpers.h"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
     #include "../../include/StringTab.hpp"
     // #include "Error_Types.h"
     
@@ -15,10 +23,17 @@
     int stringLength = (int)(temp - literal);
 
     /*
+<<<<<<< HEAD
         Maintain the curr_lineno and the currentColNumber;
 
     */
     int curr_lineno = 1;
+=======
+        Maintain the currentLineNumber and the currentColNumber;
+
+    */
+    int currentLineNumber = 1;
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
     /*
         Comment can have depth
@@ -53,6 +68,10 @@
 %x STRING_LITERAL
 %x STRING_ERROR
 %x SINGLE_LINE_COMMENT
+<<<<<<< HEAD
+=======
+%option stack
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
 /*
  * Define names for regular expressions here.
@@ -136,13 +155,18 @@ STRING_START  \"
 <COMMENT>{OPEN_COMMENT}     {
                                 commentDepth++;
                             }
+<<<<<<< HEAD
 <COMMENT>{NEWLINE}          { curr_lineno++; }
+=======
+<COMMENT>{NEWLINE}          { currentLineNumber++; }
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 <COMMENT>{CLOSE_COMMENT}    {
                                 commentDepth--;
                                 if(commentDepth == 0)
                                     BEGIN(INITIAL);
                             }     
 <INITIAL>{CLOSE_COMMENT}    {
+<<<<<<< HEAD
                                 // throw_InvalidParam(curr_lineno);
                                 yylval.error_msg = "Invalid parameter";
                                 return ERROR;
@@ -150,6 +174,13 @@ STRING_START  \"
 <COMMENT><<EOF>>            {
                                 // throw_Unexpected_EOF(curr_lineno);
                                 yylval.error_msg = "Unexpted EOF";
+=======
+                                throw_InvalidParam(currentLineNumber);
+                                return ERROR;
+                            }
+<COMMENT><<EOF>>            {
+                                throw_Unexpected_EOF(currentLineNumber);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                                 BEGIN(INITIAL);
                                 return ERROR;
                             }
@@ -159,13 +190,21 @@ STRING_START  \"
 {LINE_COMMENT}              BEGIN(SINGLE_LINE_COMMENT);
 
 <SINGLE_LINE_COMMENT>{NEWLINE}      {
+<<<<<<< HEAD
                                         curr_lineno++;
+=======
+                                        currentLineNumber++;
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                                         BEGIN(INITIAL);
                                     }
 
 <SINGLE_LINE_COMMENT>.              ;
 
+<<<<<<< HEAD
 <INITIAL>{NEWLINE}         { curr_lineno++; }
+=======
+<INITIAL>{NEWLINE}         { currentLineNumber++; }
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 <INITIAL>{WHITESPACE}+      ;
 
 
@@ -204,6 +243,10 @@ not             return NOT;
 {DOT}		     return '.';
 {TILDA}		     return '~';
 {GREATER_THAN}   return '>';
+<<<<<<< HEAD
+=======
+{GREATER_THAN_EQ}   return GE;
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 {AT}		        return '@';
 
 
@@ -212,24 +255,36 @@ not             return NOT;
 
 {TYPES}             {
                         Entry* sym = new IdEntry(yytext, MAX_SIZE, entryId++);
+<<<<<<< HEAD
                         /* printf("-----------------Found a new Id : %s-----------\n", yytext); */
+=======
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                         yylval.symbol = sym;
                         return TYPEID;
                     }
 
 
 true                {
+<<<<<<< HEAD
 
                         yylval.boolean = true;
                         return BOOL_CONST;
                     }
 false               {
                         yylval.boolean = false;
+=======
+                        yylval.BOOL_CONST_VAL = true;
+                        return BOOL_CONST;
+                    }
+false               {
+                        yylval.BOOL_CONST_VAL = false;
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                         return BOOL_CONST;
                     }
 
 
 {INTEGER}           {
+<<<<<<< HEAD
                         // This is not working for some reason
                         std::string intValue(yytext);
 
@@ -239,6 +294,12 @@ false               {
                         yylval.symbol = sym;
 
                         printf("Int Occured : %s at Line Number : %d\n", yylval.symbol->getValue(), curr_lineno);
+=======
+                        Entry* sym = new IntEntry(yytext, MAX_SIZE, entryId++);
+                        yylval.symbol = sym;
+
+                        printf("Int Occured : %s at Line Number : %d\n", yylval.symbol->getValue(), currentLineNumber);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
                         return INT_CONST;
                     }
@@ -266,11 +327,16 @@ false               {
                 
                             
 <STRING_LITERAL>\"          { 
+<<<<<<< HEAD
                                 std::string stringValue(literal);
                                 
                                 Entry* sym = new StringEntry(literal, (temp - literal), entryId++);
 
                                 /* printf("-----------------Found a new StringEntry : %s-----------\n", yytext); */
+=======
+                                
+                                Entry* sym = new StringEntry(literal, strlen(literal), entryId++);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
                                 yylval.symbol = sym;
 
@@ -281,9 +347,14 @@ false               {
                                 
                             }
 
+<<<<<<< HEAD
 
 <STRING_LITERAL>{NEWLINE}   {
                                 yylval.error_msg = "Unexpted End of string";
+=======
+<STRING_LITERAL>{NEWLINE}   {
+                                throw_UnexpectedEndOfStrError(currentLineNumber);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                                 dumpBuffers();
                                 return ERROR;
     
@@ -291,14 +362,19 @@ false               {
                             }
 
 <STRING_LITERAL><<EOF>>     {
+<<<<<<< HEAD
                                 // throw_Unexpected_EOF(curr_lineno);
                                 yylval.error_msg = "Unexpected EOF";
+=======
+                                throw_Unexpected_EOF(currentLineNumber);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                                 dumpBuffers();
                                 BEGIN(INITIAL);
                                 return ERROR;
                             }
 
 <STRING_LITERAL>.           {
+<<<<<<< HEAD
                                 printf("-----------------Found a new StringLiteral : %s------\n", literal);
 
                                 stringLength = int(temp - literal);
@@ -306,6 +382,11 @@ false               {
                                     // throw_StrConstTooLargeError(curr_lineno);
 
                                     yylval.error_msg = "String Constant too large";
+=======
+                                stringLength = int(temp - literal);
+                                if(stringLength >= MAX_SIZE) {
+                                    throw_StrConstTooLargeError(currentLineNumber);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                                     dumpBuffers();
                                     BEGIN(INITIAL);
                                     return ERROR;
@@ -320,9 +401,12 @@ false               {
 
 
 {IDENTIFIER}        {
+<<<<<<< HEAD
                         printf("-----------------Found a new Identifier : %s------\n", yytext);
 
                         
+=======
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                         Entry* sym = new IdEntry(yytext, MAX_SIZE, entryId++);
 
                         yylval.symbol = sym;
@@ -331,8 +415,12 @@ false               {
 
 .                   {
                         printf("Unexpected Token Recieved, %s\n", yytext);
+<<<<<<< HEAD
                         
                         yylval.error_msg = "Invalid Parameter";
+=======
+                        throw_InvalidParam(currentLineNumber);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                         return ERROR;
                     }
 %%
@@ -345,4 +433,10 @@ int yywrap(void)
     return 1;
 }
 
+<<<<<<< HEAD
 // Something here is causing the seg Fault--> what?
+=======
+// Construct a symbol Table
+// Return the Unexpected Character Error
+// Start working on the Parser
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a

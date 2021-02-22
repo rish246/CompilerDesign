@@ -7,7 +7,11 @@
 #define COOL_TREE_HANDCODE_H
 
 #include <iostream>
+<<<<<<< HEAD
 #include "./tree.h"
+=======
+#include "./tree.hpp"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 #include "./cool.h"
 #include "./StringTab.hpp"
 
@@ -15,8 +19,12 @@
 -- Read Tree.h
 -- Read cool.h 
 */
+<<<<<<< HEAD
 // #define yylineno curr_lineno;
 // Defining the yylineno to be equal to curr_lineno
+=======
+#define yylineno curr_lineno;
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 extern int yylineno;
 
 inline Boolean copy_Boolean(Boolean b) { return b; }
@@ -26,7 +34,11 @@ inline void dump_Boolean(ostream &stream, int padding, Boolean b)
 	stream << pad(padding) << (int)b << "\n";
 }
 
+<<<<<<< HEAD
 // we have to provide definitions in a cpp file
+=======
+
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 void dump_Symbol(ostream &stream, int padding, Symbol b);
 void assert_Symbol(Symbol b);
 Symbol copy_Symbol(Symbol b);
@@ -55,6 +67,7 @@ typedef Expressions_class *Expressions;
 typedef list_node<Case> Cases_class;
 typedef Cases_class *Cases;
 
+<<<<<<< HEAD
 // #define Program_EXTRAS \
 // 	virtual void dump_with_types(ostream &, int) = 0;
 
@@ -101,5 +114,53 @@ typedef Cases_class *Cases;
 
 // #define Expression_SHARED_EXTRAS \
 // 	void dump_with_types(ostream &, int);
+=======
+#define Program_EXTRAS \
+	virtual void dump_with_types(ostream &, int) = 0;
+
+#define program_EXTRAS \
+	void dump_with_types(ostream &, int);
+
+#define Class__EXTRAS                  \
+	virtual Symbol get_filename() = 0; \
+	virtual void dump_with_types(ostream &, int) = 0;
+
+#define class__EXTRAS                          \
+	Symbol get_filename() { return filename; } \
+	void dump_with_types(ostream &, int);
+
+#define Feature_EXTRAS \
+	virtual void dump_with_types(ostream &, int) = 0;
+
+#define Feature_SHARED_EXTRAS \
+	void dump_with_types(ostream &, int);
+
+#define Formal_EXTRAS \
+	virtual void dump_with_types(ostream &, int) = 0;
+
+#define formal_EXTRAS \
+	void dump_with_types(ostream &, int);
+
+#define Case_EXTRAS \
+	virtual void dump_with_types(ostream &, int) = 0;
+
+#define branch_EXTRAS \
+	void dump_with_types(ostream &, int);
+
+#define Expression_EXTRAS                             \
+	Symbol type;                                      \
+	Symbol get_type() { return type; }                \
+	Expression set_type(Symbol s)                     \
+	{                                                 \
+		type = s;                                     \
+		return this;                                  \
+	}                                                 \
+	virtual void dump_with_types(ostream &, int) = 0; \
+	void dump_type(ostream &, int);                   \
+	Expression_class() { type = (Symbol)NULL; }
+
+#define Expression_SHARED_EXTRAS \
+	void dump_with_types(ostream &, int);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
 #endif

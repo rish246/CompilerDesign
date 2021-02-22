@@ -6,6 +6,7 @@
 //
 //////////////////////////////////////////////////////////
 
+<<<<<<< HEAD
 #include "../../include/tree.h"
 #include "../../include/cool-tree.handcode.h"
 #include "../../include/cool-tree.h"
@@ -59,6 +60,12 @@ Symbol copy_Symbol(Symbol s)
 //    // We should be able to call dump here
 //    dump(stream, paddingLen);
 // }
+=======
+#include "../../include/tree.hpp"
+#include "../../include/cool-tree.handcode.h"
+#include "../../include/cool-tree.h"
+
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 // constructors' functions
 Program program_class::copy_Program()
 {
@@ -566,7 +573,11 @@ Expression let(Symbol identifier, Symbol type_decl, Expression init, Expression 
    return new let_class(identifier, type_decl, init, body);
 }
 
+<<<<<<< HEAD
 Expression plus_(Expression e1, Expression e2)
+=======
+Expression plus(Expression e1, Expression e2)
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 {
    return new plus_class(e1, e2);
 }

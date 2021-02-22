@@ -351,8 +351,13 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
+<<<<<<< HEAD
 #define YY_NUM_RULES 60
 #define YY_END_OF_BUFFER 61
+=======
+#define YY_NUM_RULES 61
+#define YY_END_OF_BUFFER 62
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -360,6 +365,7 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
+<<<<<<< HEAD
 static const flex_int16_t yy_accept[126] =
     {   0,
         0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
@@ -376,6 +382,24 @@ static const flex_int16_t yy_accept[126] =
        58,   58,   58,   24,   58,   13,   25,   58,   58,   58,
        20,   21,   22,   48,   58,   12,   49,   58,   58,   23,
        58,   18,   58,   17,    0
+=======
+static const flex_int16_t yy_accept[127] =
+    {   0,
+        0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+       62,   60,   11,   10,   52,   29,   30,   34,   35,   32,
+       36,   43,   37,   51,   33,   31,   41,   38,   45,   47,
+       48,   60,   60,   60,   60,   60,   60,   60,   60,   60,
+       60,   60,   39,   40,   44,    6,    3,    6,    6,   58,
+       57,   56,   58,   61,    9,    8,   11,    1,    5,    7,
+       51,   42,   46,   48,   59,   59,   59,   59,   59,   59,
+       14,   15,   16,   59,   59,   59,   59,   59,   27,   59,
+       59,   59,   59,    2,    4,   53,   55,   54,    7,   59,
+       59,   59,   59,   59,   59,   59,   19,   59,   26,   28,
+
+       59,   59,   59,   59,   24,   59,   13,   25,   59,   59,
+       59,   20,   21,   22,   49,   59,   12,   50,   59,   59,
+       23,   59,   18,   59,   17,    0
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -419,6 +443,7 @@ static const YY_CHAR yy_meta[44] =
         1,    1,    1
     } ;
 
+<<<<<<< HEAD
 static const flex_int16_t yy_base[133] =
     {   0,
         0,    0,   41,   42,   47,   49,    0,    0,  138,  137,
@@ -458,12 +483,54 @@ static const flex_int16_t yy_def[133] =
     } ;
 
 static const flex_int16_t yy_nxt[186] =
+=======
+static const flex_int16_t yy_base[134] =
+    {   0,
+        0,    0,   41,   42,   47,   49,    0,    0,  139,  138,
+      140,  143,  137,  143,  143,  131,  143,  131,  143,  143,
+      126,  143,  143,  122,  143,  143,  117,  143,  116,  143,
+        0,    0,   31,   24,   33,   29,   31,   39,  104,   98,
+       38,  101,  143,  143,  143,  143,  143,  122,  122,  143,
+      143,  143,   71,  143,  143,  143,  125,  143,  143,    0,
+      113,  143,  143,    0,    0,   89,  101,   86,   84,   75,
+        0,    0,   76,   65,   66,   69,   61,   63,    0,   66,
+       71,   59,   66,  143,  143,  143,  143,  143,    0,   68,
+       58,   66,   67,   55,   63,   56,    0,   54,    0,    0,
+
+       56,   54,   58,   53,    0,   47,    0,    0,   55,   46,
+       50,    0,    0,    0,    0,   52,    0,    0,   48,   51,
+        0,   39,    0,   35,    0,  143,  108,  111,  114,  117,
+       66,   56,  120
+    } ;
+
+static const flex_int16_t yy_def[134] =
+    {   0,
+      126,    1,  127,  127,  128,  128,  129,  129,  130,  130,
+      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
+      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
+      131,  132,  132,  132,  132,  132,  132,  132,  132,  132,
+      132,  132,  126,  126,  126,  126,  126,  126,  126,  126,
+      126,  126,  126,  126,  126,  126,  126,  126,  126,  133,
+      126,  126,  126,  131,  132,  132,  132,  132,  132,  132,
+      132,  132,  132,  132,  132,  132,  132,  132,  132,  132,
+      132,  132,  132,  126,  126,  126,  126,  126,  133,  132,
+      132,  132,  132,  132,  132,  132,  132,  132,  132,  132,
+
+      132,  132,  132,  132,  132,  132,  132,  132,  132,  132,
+      132,  132,  132,  132,  132,  132,  132,  132,  132,  132,
+      132,  132,  132,  132,  132,    0,  126,  126,  126,  126,
+      126,  126,  126
+    } ;
+
+static const flex_int16_t yy_nxt[187] =
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
     {   0,
        12,   13,   14,   15,   16,   17,   18,   19,   20,   21,
        22,   23,   24,   25,   26,   27,   28,   29,   30,   31,
        12,   12,   32,   32,   33,   32,   34,   35,   32,   36,
        37,   38,   39,   40,   32,   32,   41,   32,   32,   42,
        43,   44,   45,   47,   47,   48,   48,   49,   49,   51,
+<<<<<<< HEAD
        52,   51,   52,   65,   67,   69,   71,   74,   64,   68,
        72,   66,   70,   75,   73,   76,   80,   53,   63,   53,
       124,   77,   81,   85,   86,  123,  122,  121,  120,  119,
@@ -482,12 +549,33 @@ static const flex_int16_t yy_nxt[186] =
     } ;
 
 static const flex_int16_t yy_chk[186] =
+=======
+       52,   51,   52,   66,   68,   70,   72,   75,   65,   69,
+       73,   67,   71,   76,   74,   77,   81,   53,   64,   53,
+      125,   78,   82,   86,   87,  124,  123,  122,  121,  120,
+      119,  118,  117,  116,  115,  114,  113,  112,  111,  110,
+      109,  108,  107,  106,  105,  104,  103,  102,  101,  100,
+
+       99,   98,   97,   96,   95,   94,   93,   88,   46,   46,
+       46,   50,   50,   50,   54,   54,   54,   55,   55,   55,
+       89,   92,   89,   91,   90,   61,   57,   85,   84,   83,
+       80,   79,   63,   62,   61,   60,   59,   58,   57,  126,
+       56,   56,   11,  126,  126,  126,  126,  126,  126,  126,
+      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
+      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
+      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
+      126,  126,  126,  126,  126,  126
+    } ;
+
+static const flex_int16_t yy_chk[187] =
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    3,    4,    3,    4,    3,    4,    5,
+<<<<<<< HEAD
         5,    6,    6,   33,   34,   35,   36,   37,  131,   34,
        36,   33,   35,   37,   36,   38,   41,    5,  130,    6,
       123,   38,   41,   53,   53,  121,  119,  118,  115,  110,
@@ -503,6 +591,23 @@ static const flex_int16_t yy_chk[186] =
       125,  125,  125,  125,  125,  125,  125,  125,  125,  125,
       125,  125,  125,  125,  125,  125,  125,  125,  125,  125,
       125,  125,  125,  125,  125
+=======
+        5,    6,    6,   33,   34,   35,   36,   37,  132,   34,
+       36,   33,   35,   37,   36,   38,   41,    5,  131,    6,
+      124,   38,   41,   53,   53,  122,  120,  119,  116,  111,
+      110,  109,  106,  104,  103,  102,  101,   98,   96,   95,
+       94,   93,   92,   91,   90,   83,   82,   81,   80,   78,
+
+       77,   76,   75,   74,   73,   70,   69,   53,  127,  127,
+      127,  128,  128,  128,  129,  129,  129,  130,  130,  130,
+      133,   68,  133,   67,   66,   61,   57,   49,   48,   42,
+       40,   39,   29,   27,   24,   21,   18,   16,   13,   11,
+       10,    9,  126,  126,  126,  126,  126,  126,  126,  126,
+      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
+      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
+      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
+      126,  126,  126,  126,  126,  126
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -521,11 +626,19 @@ int yy_flex_debug = 0;
 char *yytext;
 #line 1 "lexicalAnalyzer.flex"
 #line 2 "lexicalAnalyzer.flex"
+<<<<<<< HEAD
     #include <string>
     // #include "../../include/cool_parser.hpp"
     #include "../../include/cool_parser.hpp"
     #include "../../include/cool-tree.h"
     #include "../../include/cool.h"
+=======
+    #include "../../include/lexicalAnalyzer.h"
+    #include <string.h>
+    #include "../../include/Error.h"
+    #include "../../include/Error_Types.h"
+    #include "../../include/Error_helpers.h"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
     #include "../../include/StringTab.hpp"
     // #include "Error_Types.h"
     
@@ -537,10 +650,17 @@ char *yytext;
     int stringLength = (int)(temp - literal);
 
     /*
+<<<<<<< HEAD
         Maintain the curr_lineno and the currentColNumber;
 
     */
     int curr_lineno = 1;
+=======
+        Maintain the currentLineNumber and the currentColNumber;
+
+    */
+    int currentLineNumber = 1;
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
     /*
         Comment can have depth
@@ -670,6 +790,19 @@ static int input ( void );
 
 #endif
 
+<<<<<<< HEAD
+=======
+        static int yy_start_stack_ptr = 0;
+        static int yy_start_stack_depth = 0;
+        static int *yy_start_stack = NULL;
+    
+    static void yy_push_state ( int _new_state );
+    
+    static void yy_pop_state ( void );
+    
+    static int yy_top_state ( void );
+    
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 /* Amount of stuff to slurp up with each read. */
 #ifndef YY_READ_BUF_SIZE
 #ifdef __ia64__
@@ -805,10 +938,17 @@ YY_DECL
 		}
 
 	{
+<<<<<<< HEAD
 #line 129 "lexicalAnalyzer.flex"
 
 
 #line 812 "lex.yy.c"
+=======
+#line 130 "lexicalAnalyzer.flex"
+
+
+#line 822 "lex.yy.c"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -835,13 +975,21 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
+<<<<<<< HEAD
 				if ( yy_current_state >= 126 )
+=======
+				if ( yy_current_state >= 127 )
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
+<<<<<<< HEAD
 		while ( yy_base[yy_current_state] != 142 );
+=======
+		while ( yy_base[yy_current_state] != 143 );
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -867,7 +1015,11 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 131 "lexicalAnalyzer.flex"
+=======
+#line 132 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 {
                                 BEGIN(COMMENT);
                                 commentDepth++;
@@ -875,7 +1027,11 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 136 "lexicalAnalyzer.flex"
+=======
+#line 137 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 {
                                 commentDepth++;
                             }
@@ -883,12 +1039,21 @@ YY_RULE_SETUP
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 139 "lexicalAnalyzer.flex"
 { curr_lineno++; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 140 "lexicalAnalyzer.flex"
+=======
+#line 140 "lexicalAnalyzer.flex"
+{ currentLineNumber++; }
+	YY_BREAK
+case 4:
+YY_RULE_SETUP
+#line 141 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 {
                                 commentDepth--;
                                 if(commentDepth == 0)
@@ -897,242 +1062,431 @@ YY_RULE_SETUP
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 145 "lexicalAnalyzer.flex"
 {
                                 // throw_InvalidParam(curr_lineno);
                                 yylval.error_msg = "Invalid parameter";
+=======
+#line 146 "lexicalAnalyzer.flex"
+{
+                                throw_InvalidParam(currentLineNumber);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                                 return ERROR;
                             }
 	YY_BREAK
 case YY_STATE_EOF(COMMENT):
 #line 150 "lexicalAnalyzer.flex"
 {
+<<<<<<< HEAD
                                 // throw_Unexpected_EOF(curr_lineno);
                                 yylval.error_msg = "Unexpted EOF";
+=======
+                                throw_Unexpected_EOF(currentLineNumber);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                                 BEGIN(INITIAL);
                                 return ERROR;
                             }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 156 "lexicalAnalyzer.flex"
+=======
+#line 155 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 ;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 159 "lexicalAnalyzer.flex"
+=======
+#line 158 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 BEGIN(SINGLE_LINE_COMMENT);
 	YY_BREAK
 case 8:
 /* rule 8 can match eol */
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 161 "lexicalAnalyzer.flex"
 {
                                         curr_lineno++;
+=======
+#line 160 "lexicalAnalyzer.flex"
+{
+                                        currentLineNumber++;
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                                         BEGIN(INITIAL);
                                     }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 166 "lexicalAnalyzer.flex"
+=======
+#line 165 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 ;
 	YY_BREAK
 case 10:
 /* rule 10 can match eol */
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 168 "lexicalAnalyzer.flex"
 { curr_lineno++; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 169 "lexicalAnalyzer.flex"
+=======
+#line 167 "lexicalAnalyzer.flex"
+{ currentLineNumber++; }
+	YY_BREAK
+case 11:
+YY_RULE_SETUP
+#line 168 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 ;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 172 "lexicalAnalyzer.flex"
+=======
+#line 171 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return CLASS;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 173 "lexicalAnalyzer.flex"
+=======
+#line 172 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return ELSE;
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 174 "lexicalAnalyzer.flex"
+=======
+#line 173 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return FI;
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 175 "lexicalAnalyzer.flex"
+=======
+#line 174 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return IF;
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 176 "lexicalAnalyzer.flex"
+=======
+#line 175 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return IN;
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 177 "lexicalAnalyzer.flex"
+=======
+#line 176 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return INHERITS;
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 178 "lexicalAnalyzer.flex"
+=======
+#line 177 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return ISVOID;
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 179 "lexicalAnalyzer.flex"
+=======
+#line 178 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return LET;
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 180 "lexicalAnalyzer.flex"
+=======
+#line 179 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return LOOP;
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 181 "lexicalAnalyzer.flex"
+=======
+#line 180 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return POOL;
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 182 "lexicalAnalyzer.flex"
+=======
+#line 181 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return THEN;
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 183 "lexicalAnalyzer.flex"
+=======
+#line 182 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return WHILE;
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 184 "lexicalAnalyzer.flex"
+=======
+#line 183 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return CASE;
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 185 "lexicalAnalyzer.flex"
+=======
+#line 184 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return ESAC;
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 186 "lexicalAnalyzer.flex"
+=======
+#line 185 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return NEW;
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 187 "lexicalAnalyzer.flex"
+=======
+#line 186 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return OF;
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 188 "lexicalAnalyzer.flex"
+=======
+#line 187 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return NOT;
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 190 "lexicalAnalyzer.flex"
+=======
+#line 189 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return '(';
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 191 "lexicalAnalyzer.flex"
+=======
+#line 190 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return ')';
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 192 "lexicalAnalyzer.flex"
+=======
+#line 191 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return ';';
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 193 "lexicalAnalyzer.flex"
+=======
+#line 192 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return ',';
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 194 "lexicalAnalyzer.flex"
+=======
+#line 193 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return ':';
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 195 "lexicalAnalyzer.flex"
+=======
+#line 194 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return '*';
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 196 "lexicalAnalyzer.flex"
+=======
+#line 195 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return '+';
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 197 "lexicalAnalyzer.flex"
+=======
+#line 196 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return '-';
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 198 "lexicalAnalyzer.flex"
+=======
+#line 197 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return '/';
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 199 "lexicalAnalyzer.flex"
+=======
+#line 198 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return '=';
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 200 "lexicalAnalyzer.flex"
+=======
+#line 199 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return '{';
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 201 "lexicalAnalyzer.flex"
+=======
+#line 200 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return '}';
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 202 "lexicalAnalyzer.flex"
+=======
+#line 201 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return '<';
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 203 "lexicalAnalyzer.flex"
+=======
+#line 202 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return LE;
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 204 "lexicalAnalyzer.flex"
+=======
+#line 203 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return '.';
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 205 "lexicalAnalyzer.flex"
+=======
+#line 204 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return '~';
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 206 "lexicalAnalyzer.flex"
+=======
+#line 205 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 return '>';
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 207 "lexicalAnalyzer.flex"
 return '@';
 	YY_BREAK
 case 47:
+=======
+#line 206 "lexicalAnalyzer.flex"
+return GE;
+	YY_BREAK
+case 47:
+YY_RULE_SETUP
+#line 207 "lexicalAnalyzer.flex"
+return '@';
+	YY_BREAK
+case 48:
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 YY_RULE_SETUP
 #line 213 "lexicalAnalyzer.flex"
 {
                         Entry* sym = new IdEntry(yytext, MAX_SIZE, entryId++);
+<<<<<<< HEAD
                         /* printf("-----------------Found a new Id : %s-----------\n", yytext); */
+=======
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                         yylval.symbol = sym;
                         return TYPEID;
                     }
 	YY_BREAK
+<<<<<<< HEAD
 case 48:
 YY_RULE_SETUP
 #line 221 "lexicalAnalyzer.flex"
@@ -1164,42 +1518,94 @@ YY_RULE_SETUP
                         yylval.symbol = sym;
 
                         printf("Int Occured : %s at Line Number : %d\n", yylval.symbol->getValue(), curr_lineno);
-
-                        return INT_CONST;
+=======
+case 49:
+YY_RULE_SETUP
+#line 220 "lexicalAnalyzer.flex"
+{
+                        yylval.BOOL_CONST_VAL = true;
+                        return BOOL_CONST;
+                    }
+	YY_BREAK
+case 50:
+YY_RULE_SETUP
+#line 224 "lexicalAnalyzer.flex"
+{
+                        yylval.BOOL_CONST_VAL = false;
+                        return BOOL_CONST;
                     }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
+#line 230 "lexicalAnalyzer.flex"
+{
+                        Entry* sym = new IntEntry(yytext, MAX_SIZE, entryId++);
+                        yylval.symbol = sym;
+
+                        printf("Int Occured : %s at Line Number : %d\n", yylval.symbol->getValue(), currentLineNumber);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
+
+                        return INT_CONST;
+                    }
+	YY_BREAK
+<<<<<<< HEAD
+case 51:
+YY_RULE_SETUP
 #line 248 "lexicalAnalyzer.flex"
+=======
+case 52:
+YY_RULE_SETUP
+#line 240 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 {
                         BEGIN(STRING_LITERAL);
                         literal = new char[MAX_SIZE];
                         temp = literal;
                     }
 	YY_BREAK
+<<<<<<< HEAD
 case 52:
 /* rule 52 can match eol */
 YY_RULE_SETUP
 #line 254 "lexicalAnalyzer.flex"
+=======
+case 53:
+/* rule 53 can match eol */
+YY_RULE_SETUP
+#line 246 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 {
                                     
                                     *temp++ = '\n';
                                 }
 	YY_BREAK
+<<<<<<< HEAD
 case 53:
 YY_RULE_SETUP
 #line 258 "lexicalAnalyzer.flex"
+=======
+case 54:
+YY_RULE_SETUP
+#line 250 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 {
                                     *temp++ = '\t';
                                 }
 	YY_BREAK
+<<<<<<< HEAD
 case 54:
 YY_RULE_SETUP
 #line 262 "lexicalAnalyzer.flex"
+=======
+case 55:
+YY_RULE_SETUP
+#line 254 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 {
                                     *temp++ = '\"';
                                 }
 	YY_BREAK
+<<<<<<< HEAD
 case 55:
 YY_RULE_SETUP
 #line 269 "lexicalAnalyzer.flex"
@@ -1208,6 +1614,14 @@ YY_RULE_SETUP
                                 Entry* sym = new StringEntry(literal, (temp - literal), entryId++);
 
                                 /* printf("-----------------Found a new StringEntry : %s-----------\n", yytext); */
+=======
+case 56:
+YY_RULE_SETUP
+#line 261 "lexicalAnalyzer.flex"
+{ 
+                                
+                                Entry* sym = new StringEntry(literal, strlen(literal), entryId++);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
                                 yylval.symbol = sym;
 
@@ -1218,12 +1632,21 @@ YY_RULE_SETUP
                                 
                             }
 	YY_BREAK
+<<<<<<< HEAD
 case 56:
 /* rule 56 can match eol */
 YY_RULE_SETUP
 #line 285 "lexicalAnalyzer.flex"
 {
                                 yylval.error_msg = "Unexpted End of string";
+=======
+case 57:
+/* rule 57 can match eol */
+YY_RULE_SETUP
+#line 274 "lexicalAnalyzer.flex"
+{
+                                throw_UnexpectedEndOfStrError(currentLineNumber);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                                 dumpBuffers();
                                 return ERROR;
     
@@ -1231,15 +1654,22 @@ YY_RULE_SETUP
                             }
 	YY_BREAK
 case YY_STATE_EOF(STRING_LITERAL):
+<<<<<<< HEAD
 #line 293 "lexicalAnalyzer.flex"
 {
                                 // throw_Unexpected_EOF(curr_lineno);
                                 yylval.error_msg = "Unexpected EOF";
+=======
+#line 282 "lexicalAnalyzer.flex"
+{
+                                throw_Unexpected_EOF(currentLineNumber);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                                 dumpBuffers();
                                 BEGIN(INITIAL);
                                 return ERROR;
                             }
 	YY_BREAK
+<<<<<<< HEAD
 case 57:
 YY_RULE_SETUP
 #line 301 "lexicalAnalyzer.flex"
@@ -1251,6 +1681,15 @@ YY_RULE_SETUP
                                     // throw_StrConstTooLargeError(curr_lineno);
 
                                     yylval.error_msg = "String Constant too large";
+=======
+case 58:
+YY_RULE_SETUP
+#line 289 "lexicalAnalyzer.flex"
+{
+                                stringLength = int(temp - literal);
+                                if(stringLength >= MAX_SIZE) {
+                                    throw_StrConstTooLargeError(currentLineNumber);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                                     dumpBuffers();
                                     BEGIN(INITIAL);
                                     return ERROR;
@@ -1259,6 +1698,7 @@ YY_RULE_SETUP
                                 *temp++ = *yytext;
                             }
 	YY_BREAK
+<<<<<<< HEAD
 case 58:
 YY_RULE_SETUP
 #line 322 "lexicalAnalyzer.flex"
@@ -1266,12 +1706,19 @@ YY_RULE_SETUP
                         printf("-----------------Found a new Identifier : %s------\n", yytext);
 
                         
+=======
+case 59:
+YY_RULE_SETUP
+#line 306 "lexicalAnalyzer.flex"
+{
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
                         Entry* sym = new IdEntry(yytext, MAX_SIZE, entryId++);
 
                         yylval.symbol = sym;
                         return OBJECTID;
                     }
 	YY_BREAK
+<<<<<<< HEAD
 case 59:
 YY_RULE_SETUP
 #line 332 "lexicalAnalyzer.flex"
@@ -1288,6 +1735,23 @@ YY_RULE_SETUP
 ECHO;
 	YY_BREAK
 #line 1291 "lex.yy.c"
+=======
+case 60:
+YY_RULE_SETUP
+#line 313 "lexicalAnalyzer.flex"
+{
+                        printf("Unexpected Token Recieved, %s\n", yytext);
+                        throw_InvalidParam(currentLineNumber);
+                        return ERROR;
+                    }
+	YY_BREAK
+case 61:
+YY_RULE_SETUP
+#line 318 "lexicalAnalyzer.flex"
+ECHO;
+	YY_BREAK
+#line 1285 "lex.yy.c"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(STRING_ERROR):
 case YY_STATE_EOF(SINGLE_LINE_COMMENT):
@@ -1586,7 +2050,11 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
+<<<<<<< HEAD
 			if ( yy_current_state >= 126 )
+=======
+			if ( yy_current_state >= 127 )
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1614,11 +2082,19 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
+<<<<<<< HEAD
 		if ( yy_current_state >= 126 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 	yy_is_jam = (yy_current_state == 125);
+=======
+		if ( yy_current_state >= 127 )
+			yy_c = yy_meta[yy_c];
+		}
+	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
+	yy_is_jam = (yy_current_state == 126);
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -2087,6 +2563,47 @@ YY_BUFFER_STATE yy_scan_bytes  (const char * yybytes, int  _yybytes_len )
 	return b;
 }
 
+<<<<<<< HEAD
+=======
+    static void yy_push_state (int  _new_state )
+{
+    	if ( (yy_start_stack_ptr) >= (yy_start_stack_depth) )
+		{
+		yy_size_t new_size;
+
+		(yy_start_stack_depth) += YY_START_STACK_INCR;
+		new_size = (yy_size_t) (yy_start_stack_depth) * sizeof( int );
+
+		if ( ! (yy_start_stack) )
+			(yy_start_stack) = (int *) yyalloc( new_size  );
+
+		else
+			(yy_start_stack) = (int *) yyrealloc(
+					(void *) (yy_start_stack), new_size  );
+
+		if ( ! (yy_start_stack) )
+			YY_FATAL_ERROR( "out of memory expanding start-condition stack" );
+		}
+
+	(yy_start_stack)[(yy_start_stack_ptr)++] = YY_START;
+
+	BEGIN(_new_state);
+}
+
+    static void yy_pop_state  (void)
+{
+    	if ( --(yy_start_stack_ptr) < 0 )
+		YY_FATAL_ERROR( "start-condition stack underflow" );
+
+	BEGIN((yy_start_stack)[(yy_start_stack_ptr)]);
+}
+
+    static int yy_top_state  (void)
+{
+    	return (yy_start_stack)[(yy_start_stack_ptr) - 1];
+}
+
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 #ifndef YY_EXIT_FAILURE
 #define YY_EXIT_FAILURE 2
 #endif
@@ -2207,6 +2724,13 @@ static int yy_init_globals (void)
     (yy_init) = 0;
     (yy_start) = 0;
 
+<<<<<<< HEAD
+=======
+    (yy_start_stack_ptr) = 0;
+    (yy_start_stack_depth) = 0;
+    (yy_start_stack) =  NULL;
+
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 /* Defined in main.c */
 #ifdef YY_STDINIT
     yyin = stdin;
@@ -2237,6 +2761,13 @@ int yylex_destroy  (void)
 	yyfree((yy_buffer_stack) );
 	(yy_buffer_stack) = NULL;
 
+<<<<<<< HEAD
+=======
+    /* Destroy the start condition stack. */
+        yyfree( (yy_start_stack)  );
+        (yy_start_stack) = NULL;
+
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
     /* Reset the globals. This is important in a non-reentrant scanner so the next time
      * yylex() is called, initialization will occur. */
     yy_init_globals( );
@@ -2294,7 +2825,11 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
+<<<<<<< HEAD
 #line 338 "lexicalAnalyzer.flex"
+=======
+#line 318 "lexicalAnalyzer.flex"
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
 
 /*
     COMMENTS
@@ -2305,4 +2840,11 @@ int yywrap(void)
     return 1;
 }
 
+<<<<<<< HEAD
 // Something here is causing the seg Fault--> what?
+=======
+// Construct a symbol Table
+// Return the Unexpected Character Error
+// Start working on the Parser
+
+>>>>>>> f3b6a6f722898ad27256033354da69be5af6ce9a
