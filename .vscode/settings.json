@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "cool.h": "c",
+        "streambuf": "cpp"
+    }
+}
